@@ -6,11 +6,11 @@
     "outDir": "dist",
     "declaration": true,
     "pretty": true,
-    "strictNullChecks": true,
     "noUnusedLocals": true,
     "target": "esnext",
     "experimentalDecorators": true,
     "strict": true,
+    "esModuleInterop": true,
     "lib": [
       "dom",
       "es6",
