@@ -55,7 +55,11 @@ export class RawVerticalScrollbar extends Scrollbar<TAdditionalVerticalScrollBar
 
 	componentWillReceiveProps(newProps: TFullVerticalScrollBarProp) {
 		const { scrollTop, container } = this.props;
-		if (scrollTop !== newProps.scrollTop && newProps.scrollTop && container.scrollHeight > container.clientHeight) {
+		if (
+			typeof newProps.scrollTop !== 'undefined' &&
+			((scrollTop !== newProps.scrollTop && newProps.scrollTop) ||
+				container.scrollHeight > container.clientHeight)
+		) {
 			this._scrollTo(newProps.scrollTop);
 		}
 	}
